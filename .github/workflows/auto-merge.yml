@@ -1,0 +1,55 @@
+name: Auto Merge Pull Requests
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Run every hour
+  workflow_dispatch:
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repositories
+      uses: actions/checkout@v2
+      with:
+        repository: ${{ github.repository }}
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Fetch and merge pull requests
+      run: |
+        repos=(
+          "Boomtoknlab/repo1"
+          "Boomtoknlab/repo2"
+          "Boomtoknlab/repo3"
+          # Add more repositories as needed
+        )
+        
+        GH_TOKEN=${{ secrets.GITHUB_TOKEN }}
+
+        for repo in "${repos[@]}"; do
+          echo "Processing $repo"
+          git clone https://$GH_TOKEN@github.com/$repo.git
+          cd $(basename "$repo")
+
+          # Fetch open pull requests
+          prs=$(gh pr list --state open --json number --jq '.[].number')
+
+          for pr in $prs; do
+            echo "Merging PR #$pr in $repo"
+            gh pr merge $pr --squash --admin
+          done
+
+          cd ..
+          rm -rf $(basename "$repo")
+        done
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
