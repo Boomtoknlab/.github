@@ -1,0 +1,18 @@
+name: AI Review Bot
+on: pull_request
+
+jobs:
+  ai-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: AI-Powered Code Review
+        run: |
+          REVIEW=$(curl -X POST "https://api.openai.com/v1/completions" \
+            -H "Authorization: Bearer $OPENAI_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "model": "gpt-4",
+              "prompt": "Review this PR and suggest improvements",
+              "max_tokens": 150
+            }')
+          echo "AI Review: $REVIEW"
