@@ -1,7 +1,7 @@
 ## 🚀 **🚀 Boomtoknlab | Next-Gen Tech Hub**
 🌌 _"We Build the Future of AI & Blockchain."_  
-![Image Description](UN9MIHL.jpg)
 
+https://i.imgur.com/UN9MIHL.jpg
 
 ![Boomtoknlab](https://your-cdn.com/boomtoknlab-banner.svg)
 ![GitHub Org](https://img.shields.io/badge/GitHub-Boomtoknlab-blue?style=flat&logo=github)
