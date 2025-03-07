@@ -1,0 +1,26 @@
+name: Setup Node.js Environment and Send Funds
+
+on: [push]
+
+jobs:
+  setup-node:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      run: |
+        sudo apt update
+        curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+        sudo apt install -y nodejs
+        node -v
+        npm -v
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Run sendFunds script
+      run: node sendFunds.js
