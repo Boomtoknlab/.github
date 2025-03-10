@@ -28,13 +28,12 @@
 
 ### 🐳 **DevOps & Infrastructure**  
 ![Docker](https://img.shields.io/badge/Docker-%232496ED?style=for-the-badge&logo=docker&logoColor=white)  
-![Firebase](https://img.shields.io/badge/Firebase-%23DD2C00?style=for-the-badge&logo=<Project Sdk="Microsoft.NET.Sdk">
+![Firebase](https://img.shields.io/badge/Firebase-%23DD2C00?style=for-the-badge&logo=firebase&logoColor=white)  
+
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="10.1.1" />
-    <PackageReference Include="AgileObjects.ReadableExpressions" Version="4.1.3" />
-  </ItemGroup>
-</Project>
+    <PackageReference Include="AutoMapper" Version=" ▋
