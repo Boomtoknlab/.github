@@ -12,7 +12,7 @@
 ## 🔗 **Connect with Us**
 
 - 💬 **Join our Slack:** [Start a conversation](https://join.slack.com/shareDM/zt-319wq2rc5-Z_R~khwIplIzSH9pZZUwNg)
-- 🌍 **Visit our website:** [boomtoknlab.com](https://boomtoknlab.com)
+- 🌍 **Visit our website:** [boomchainlab.com](https://boomchainlab.com)
 
 ---
 
